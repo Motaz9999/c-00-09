@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 14:05:38 by moodeh            #+#    #+#             */
-/*   Updated: 2026/06/24 19:13:47 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/06/24 19:58:39 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,21 +41,30 @@ Contacts::~Contacts(void)
 void Contacts::setFirstName(std::string &name)
 {
 	if (!name.empty())
+	{
+		std ::cout << "Error : empty input" << std::endl;
 		return ;
+	}
 	this->_firstName = name;
 }
 
 void Contacts::setLastName(std::string &name)
 {
 	if (!name.empty())
+	{
+		std ::cout << "Error : empty input" << std::endl;
 		return ;
+	}
 	this->_lastName = name;
 }
 
 void Contacts::setNickName(std::string &name)
 {
 	if (!name.empty())
+	{
+		std ::cout << "Error : empty input" << std::endl;
 		return ;
+	}
 	this->_nickName = name;
 }
 
@@ -69,6 +78,16 @@ void Contacts::setPhoneNumber(std::string &str)
 	}
 	number = std::atoi(str.c_str());
 	this->_phoneNumber = number;
+}
+
+void Contacts::setDarkestSecrete(std::string &name)
+{
+	if (!name.empty())
+	{
+		std ::cout << "Error : empty input" << std::endl;
+		return ;
+	}
+	this->_darkestSecret;
 }
 
 bool Contacts::checkOnNumber(std::string &str)
@@ -93,17 +112,25 @@ std::string Contacts::getFirstName(void) const
 {
 	return (this->_firstName);
 }
+
 std::string Contacts::getLastName(void) const
 {
 	return (this->_lastName);
 }
+
 std::string Contacts::getNickName(void) const
 {
 	return (this->_nickName);
 }
+
 int Contacts::getPhoneNumber(void) const
 {
 	return (this->_phoneNumber);
+}
+
+std::string Contacts::getDarkestSecrete(void) const
+{
+	return (this->_darkestSecret);
 }
 
 } // namespace Phone

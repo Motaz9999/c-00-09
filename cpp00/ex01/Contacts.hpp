@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 14:01:02 by moodeh            #+#    #+#             */
-/*   Updated: 2026/06/24 19:12:21 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/06/24 19:54:29 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,14 @@ class Contacts
 	void setNickName(std::string &name);
 	void setLastName(std::string &name);
 	void setFirstName(std::string &name);
+	void setDarkestSecrete(std::string &name);
 
   public:
 	int getPhoneNumber(void) const;
 	std::string getNickName(void) const;
 	std::string getLastName(void) const;
 	std::string getFirstName(void) const;
-
+	std::string getDarkestSecrete(void) const;
 	Contacts();
 	~Contacts();
 };
