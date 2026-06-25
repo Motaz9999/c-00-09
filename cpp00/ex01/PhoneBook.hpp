@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 17:27:40 by moodeh            #+#    #+#             */
-/*   Updated: 2026/06/24 20:01:44 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/06/25 20:34:45 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,19 @@ namespace Phone
 class PhoneBook
 {
   public:
-	bool add();
+	void add(void);
 	void search(void);
 	void printContacts(void) const;
+	PhoneBook(void);
 
   private: // helper fun and data i dont show it to randoms
 	Contacts _arr[SIZE_OF_ARRAY];
 	int _index;
-	void PhoneBook::printRow(const int &index, const std::string &firstName,
+	void printRow(const int &index, const std::string &firstName,
 		const std::string &lastName, const std::string &nickName) const;
-	std::string FormatColumn(std::string &str);
+	std::string FormatColumn(const std::string str)const;
+	void checkOnInput(std::string &input);
+	void validNumber(std::string &input);
 };
 } // namespace Phone
 #endif
