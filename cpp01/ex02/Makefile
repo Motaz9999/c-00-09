@@ -1,5 +1,5 @@
-NAME =  "Moar brainz!"
-SRC = main.cpp Zombie.cpp zombieHord.cpp
+NAME = "HI THIS IS BRAIN"
+SRC = main.cpp 
 OBJ	= $(SRC:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
