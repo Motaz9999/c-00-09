@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 23:17:42 by moodeh            #+#    #+#             */
-/*   Updated: 2026/07/08 00:09:00 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/07/09 18:42:59 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ String::String(String const &other) : _data(NULL), _length(other._length)
 
 // copy assignment operator
 // replace this obj content with other content independent
-String &String::operator=(String const &other)
+String& String::operator=(String const &other)
 {
 	std::cout << "[String] Copy assignment operator" << std::endl;
 	if (this == &other)

@@ -12,7 +12,7 @@ class String
 	String();
 	String(std::string const &content);
 	String(String const &other); // copy constructor
-	String &operator=(String const &other);
+	String& operator=(String const &other);
 	~String();
 
 	// other fun
