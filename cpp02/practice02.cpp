@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 21:24:08 by moodeh            #+#    #+#             */
-/*   Updated: 2026/07/09 22:30:05 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/07/10 17:03:01 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,10 @@
 // , operator() make the the obj as fun 
 // , operator-> for ptr
 //all these just FOR MEMBER CLASS USE
-//[] = () -> 
+//[] = () ->  ++ += -= *= /= %= all these are must be MEMBERS
+//optional members are + - ... its prefred to be free to so( obj1 + obj2 == obj2 + obj1 )
 
-
-//stream ops must be FREE OPS
+//stream ops must be FREE OPS 
 //(std::cout) (<<) (obj)  the left is (std::cout) is std::ostream that class have no member
 //
 
