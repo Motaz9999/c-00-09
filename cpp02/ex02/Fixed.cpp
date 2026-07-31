@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/31 13:06:25 by moodeh            #+#    #+#             */
-/*   Updated: 2026/07/31 17:58:17 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/07/31 17:52:54 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ Fixed::Fixed(int const value) : _rawValue(value << _fractionalBits)
 {
 	std::cout << "Int constructor called" << std::endl;
 }
-Fixed::Fixed(float const value) : _rawValue(static_cast<int>(roundf(value
-			* (1 << _fractionalBits))))
+Fixed::Fixed(float const value) : _rawValue(value * (1 << _fractionalBits))
 {
 	std::cout << "Float constructor called" << std::endl;
 }

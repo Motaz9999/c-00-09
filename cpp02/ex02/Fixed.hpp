@@ -6,14 +6,14 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/31 13:00:42 by moodeh            #+#    #+#             */
-/*   Updated: 2026/07/31 17:56:31 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/07/31 17:39:04 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
 #include <iostream>
-#include <cmath>
+
 class Fixed
 {
   public:
