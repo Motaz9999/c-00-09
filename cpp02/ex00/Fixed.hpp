@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/31 13:00:42 by moodeh            #+#    #+#             */
-/*   Updated: 2026/07/31 13:05:41 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/07/31 13:49:13 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Fixed
     Fixed(Fixed const &other);//copy constructerr
     Fixed& operator=(Fixed const &other);//copy assignment 
     ~Fixed();//des
-    int getRawBits(void);
+    int getRawBits(void) const;
     void setRawBits(int const raw);
     private:
     int _rawValue;

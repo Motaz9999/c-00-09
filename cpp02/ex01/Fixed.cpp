@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/31 13:06:25 by moodeh            #+#    #+#             */
-/*   Updated: 2026/07/31 13:50:02 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/07/31 13:42:46 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,22 +34,20 @@ Fixed &Fixed::operator=(Fixed const &other)
 	{
 		return (*this);
 	}
-	this->_rawValue = other.getRawBits();
+	this->_rawValue = other._rawValue;
 	return (*this); // chaining
 }
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
 }
-int Fixed::getRawBits(void) const
+int Fixed::getRawBits(void)
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (_rawValue);
 }
 void Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called" << std::endl;
-	this->_rawValue = raw;
+    this->_rawValue = raw;
 }
 //     private:
 //     int _rawValue;
