@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Amphibious.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/04 14:13:17 by moodeh            #+#    #+#             */
-/*   Updated: 2026/08/14 21:29:48 by moodeh           ###   ########.fr       */
+/*   Created: 2026/08/14 21:46:08 by moodeh            #+#    #+#             */
+/*   Updated: 2026/08/14 21:46:09 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
-# include <iostream>
-# include <string>
-class Animal
+#ifndef AMPHIBIOUS_HPP
+# define AMPHIBIOUS_HPP
+# include "SwimmingAnimal.hpp"
+# include "WalkingAnimal.hpp"
+class Amphibious : public WalkingAnimal, public SwimmingAnimal
 {
-    protected:
-    std::string _name;
-    public:
-    Animal();
-    Animal(std::string const& name);
-    Animal(Animal const& other);
-    Animal& operator=(Animal const& other);
-    ~Animal();
-    std::string getName() const ;//return name
+  public:
+	Amphibious(const std::string &name);
+	~Amphibious();
 };
 #endif

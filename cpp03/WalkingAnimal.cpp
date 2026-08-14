@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WalkingAnimal.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/04 14:13:17 by moodeh            #+#    #+#             */
-/*   Updated: 2026/08/14 21:29:48 by moodeh           ###   ########.fr       */
+/*   Created: 2026/08/14 21:23:06 by moodeh            #+#    #+#             */
+/*   Updated: 2026/08/14 21:30:36 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
-# include <iostream>
-# include <string>
-class Animal
+#include "WalkingAnimal.hpp"
+
+WalkingAnimal::WalkingAnimal(const std::string &name) : Animal(name)
 {
-    protected:
-    std::string _name;
-    public:
-    Animal();
-    Animal(std::string const& name);
-    Animal(Animal const& other);
-    Animal& operator=(Animal const& other);
-    ~Animal();
-    std::string getName() const ;//return name
-};
-#endif
+	std::cout << "[WalkingAnimal]  constructor called" << std::endl;
+}
+WalkingAnimal::~WalkingAnimal()
+{
+	std::cout << "[WalkingAnimal]  destructor called" << std::endl;
+}
+void WalkingAnimal::walk() const
+{
+	std::cout << _name << " walks on four legs." << std::endl;
+}

@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WalkingAnimal.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/04 14:13:17 by moodeh            #+#    #+#             */
-/*   Updated: 2026/08/14 21:29:48 by moodeh           ###   ########.fr       */
+/*   Created: 2026/08/14 21:20:13 by moodeh            #+#    #+#             */
+/*   Updated: 2026/08/14 21:24:07 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
-# include <iostream>
-# include <string>
-class Animal
+#ifndef WALKINGANIMAL_HPP
+# define WALKINGANIMAL_HPP
+# include "Animal.hpp"
+class WalkingAnimal : virtual public Animal
 {
-    protected:
-    std::string _name;
-    public:
-    Animal();
-    Animal(std::string const& name);
-    Animal(Animal const& other);
-    Animal& operator=(Animal const& other);
-    ~Animal();
-    std::string getName() const ;//return name
+  protected:
+  public:
+	WalkingAnimal(const std::string &name);
+	~WalkingAnimal();
+	void walk() const;
 };
 #endif
