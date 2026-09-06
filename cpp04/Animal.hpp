@@ -12,6 +12,8 @@ class Animal
 	~Animal();
 
 	std::string getName() const;
-	void makeSound() const;
+//	void makeSound() const;
+
+	virtual void makeSound() const;//this update from the original
 };
 #endif
