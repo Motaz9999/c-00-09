@@ -9,7 +9,8 @@ class Animal
   public:
 	Animal();
 	Animal(const std::string &name);
-	~Animal();
+	// ~Animal(); old
+	virtual ~Animal();//cus we can use the poly
 
 	std::string getName() const;
 //	void makeSound() const;
