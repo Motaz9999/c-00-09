@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Fish.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/06 18:09:07 by moodeh            #+#    #+#             */
-/*   Updated: 2026/09/07 20:23:41 by moodeh           ###   ########.fr       */
+/*   Created: 2026/09/07 18:21:34 by moodeh            #+#    #+#             */
+/*   Updated: 2026/09/07 18:23:19 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
-//# include "Animal.hpp"
-# include "AAnimal.hpp"
-//class Dog : public Animal
-class Dog : public AAnimal
-{
-  private:
-  protected:
-  public:
-	Dog();
-	Dog(const std::string &name);
-	~Dog();
-	void makeSound() const;//refined , now its virtual pure fun
-    
-};
+#ifndef FISH_HPP
+#define FISH_HPP
 
+#include "AAnimal.hpp"
+class Fish : public AAnimal
+{
+    private :
+    protected:
+    public :
+    	Fish(const std::string& name);
+		virtual ~Fish();
+        //for example i forgot the to implement the pure fun so now this is an abstract class so it must override the fun 
+        
+};
 #endif

@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/06 18:10:51 by moodeh            #+#    #+#             */
-/*   Updated: 2026/09/06 18:11:08 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/09/07 20:32:50 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 #include <iostream>
 
-Dog::Dog() : Animal()
+Dog::Dog() : AAnimal()
 {
 	std::cout << "[Dog] default constructor -> " << _name << std::endl;
 }
 
-Dog::Dog(const std::string& name) : Animal(name)
+Dog::Dog(const std::string& name) : AAnimal(name)
 {
 	std::cout << "[Dog] parameterized constructor -> " << _name << std::endl;
 }

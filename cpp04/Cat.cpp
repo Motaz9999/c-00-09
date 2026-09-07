@@ -1,12 +1,12 @@
 #include "Cat.hpp"
 #include <iostream>
 
-Cat::Cat() : Animal()
+Cat::Cat() : AAnimal()
 {
 	std::cout << "[Cat] default constructor -> " << _name << std::endl;
 }
 
-Cat::Cat(const std::string& name) : Animal(name)
+Cat::Cat(const std::string& name) : AAnimal(name)
 {
 	std::cout << "[Cat] parameterized constructor -> " << _name << std::endl;
 }

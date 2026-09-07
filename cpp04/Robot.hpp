@@ -1,8 +1,9 @@
 #ifndef ROBOT_HPP
 # define ROBOT_HPP
-
-#include "Animal.hpp"
-class Robot : public Animal
+// #include "Animal.hpp"
+// class Robot : public Animal
+#include "AAnimal.hpp"
+class Robot : public AAnimal
 {
     private:
     int *_batteryLog;//spacial attribute on HEAP btw

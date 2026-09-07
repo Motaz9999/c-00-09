@@ -1,8 +1,8 @@
-NAME = test02
+NAME = test03
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 
 
-SRC = Animal.cpp Robot.cpp Dog.cpp Cat.cpp practice02.cpp
+SRC = AAnimal.cpp Dog.cpp Robot.cpp Cat.cpp practice03.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all : $(NAME)

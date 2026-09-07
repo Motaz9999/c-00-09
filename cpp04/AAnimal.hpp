@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/06 18:09:07 by moodeh            #+#    #+#             */
-/*   Updated: 2026/09/07 20:23:41 by moodeh           ###   ########.fr       */
+/*   Created: 2026/09/07 18:02:19 by moodeh            #+#    #+#             */
+/*   Updated: 2026/09/07 18:06:08 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
-//# include "Animal.hpp"
-# include "AAnimal.hpp"
-//class Dog : public Animal
-class Dog : public AAnimal
-{
-  private:
-  protected:
-  public:
-	Dog();
-	Dog(const std::string &name);
-	~Dog();
-	void makeSound() const;//refined , now its virtual pure fun
-    
-};
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
+#include <string>
 
+class AAnimal
+{
+    private:
+    protected:
+    std::string _name;
+    public:
+    AAnimal();
+    AAnimal(const std::string &name);//tell here it looks like normal class
+    virtual ~AAnimal();//now its polymorphic class
+    
+    std::string getName() const;
+
+    virtual void makeSound() const = 0;// this is pure Virtual Fun now the class is Abstract class
+};
 #endif
