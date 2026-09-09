@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   ISerializable.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/06 18:09:07 by moodeh            #+#    #+#             */
-/*   Updated: 2026/09/09 19:11:48 by moodeh           ###   ########.fr       */
+/*   Created: 2026/09/09 17:29:55 by moodeh            #+#    #+#             */
+/*   Updated: 2026/09/09 19:10:15 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
-//# include "Animal.hpp"
-# include "AAnimal.hpp"
-#include "ISerializable.hpp"
-//class Dog : public Animal
-class Dog : public AAnimal , public ISerializable
+#ifndef ISerializable_HPP
+# define ISerializable_HPP
+# include <string>
+class ISerializable
 {
-  private:
-  protected:
-  public:
-	Dog();
-	Dog(const std::string &name);
-	~Dog();
-	virtual void makeSound() const;//refined , now its virtual pure fun
-	virtual std::string serialize() const ;
-    
+    public:
+    virtual ~ISerializable(){} // so no need fo
+    virtual std::string serialize() const =0;//pure fun so this is abs class or INTERFACE
 };
-
 #endif

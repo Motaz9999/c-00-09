@@ -3,8 +3,9 @@
 
 // #include "Animal.hpp"
 #include "AAnimal.hpp"
+#include "ISerializable.hpp"
 // class Cat : public Animal
-class Cat : public AAnimal
+class Cat : public AAnimal , public ISerializable
 {
 	public:
 		Cat();
@@ -12,6 +13,8 @@ class Cat : public AAnimal
 		~Cat();
 
 		void makeSound() const;
+		virtual std::string serialize() const ;
+
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 18:06:23 by moodeh            #+#    #+#             */
-/*   Updated: 2026/09/07 18:11:19 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/09/09 16:52:41 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ std::string AAnimal::getName() const
 {
     return _name;
 }
-
+//its ok if i dont implement it 
 void AAnimal::makeSound() const //never reach the light
 {
 	std::cout << _name << " makes a generic animal sound." << std::endl;
