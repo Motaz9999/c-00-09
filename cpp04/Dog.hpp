@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/06 18:09:07 by moodeh            #+#    #+#             */
-/*   Updated: 2026/09/09 19:11:48 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/09/10 18:22:01 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,12 @@ class Dog : public AAnimal , public ISerializable
   public:
 	Dog();
 	Dog(const std::string &name);
+	Dog(const Dog &obj);
+	Dog& operator=(const Dog &obj);
 	~Dog();
 	virtual void makeSound() const;//refined , now its virtual pure fun
 	virtual std::string serialize() const ;
+	virtual AAnimal* clone() const;
     
 };
 

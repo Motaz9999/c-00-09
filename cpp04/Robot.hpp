@@ -12,8 +12,11 @@ class Robot : public AAnimal, public ISerializable
   public:
 	Robot();
 	Robot(const std::string &name);
+	Robot(const Robot &obj);
+	Robot& operator=(const Robot &obj);
 	~Robot();
 	virtual void makeSound() const;
 	virtual std::string serialize() const;
+	virtual AAnimal* clone() const;
 };
 #endif
