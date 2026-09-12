@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 17:56:43 by moodeh            #+#    #+#             */
-/*   Updated: 2026/06/25 20:34:28 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/09/12 19:18:18 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,35 +40,23 @@ PhoneBook::PhoneBook(void)
 	std::cout << "Created a PhoneBook" << std::endl;
 }
 
-void PhoneBook::checkOnInput(std::string &input)
+bool PhoneBook::checkOnInput(std::string &input)
 {
-	bool	valid;
-
-	valid = false;
-	while (!valid)
+	while (!true)
 	{
 		if (!std::getline(std::cin, input))
-		{
-			std::cerr << "Error : error in input please enter again :" << std::flush;
-			;
-			continue ;
-		}
+			return (false);
 		if (input.empty())
 		{
 			std::cerr << "Error : empty value please enter again :";
 			continue ;
 		}
-		valid = true;
+		return (true);
 	}
 }
 
 bool	checkOnNumber(std::string &str)
 {
-	if (str.empty())
-	{
-		std::cerr << "Error : empty input please enter again : " << std::flush;
-		return (false);
-	}
 	if (str.length() < 7 || str.length() > 15)
 	{
 		std::cerr << "Error : phone number should be 7-15 digits long please enter again :" << std::flush;
@@ -85,58 +73,53 @@ bool	checkOnNumber(std::string &str)
 	return (true);
 }
 
-void PhoneBook::validNumber(std::string &input)
+bool PhoneBook::validNumber(std::string &input)
 {
-	bool	valid;
-
-	valid = false;
-	while (!valid)
+	while (true)
 	{
 		if (!std::getline(std::cin, input))
-		{
-			std::cerr << "Error : error in input please enter again : " << std::flush;
-			continue ;
-		}
+			return (false);
 		if (input.empty())
 		{
 			std::cerr << "Error : empty value please enter again :" << std::flush;
 			continue ;
 		}
 		if (!checkOnNumber(input))
-		{
 			continue ;
-		}
-		valid = true;
+		return (false);
 	}
 }
 
 // this is for adding a new contact
 void PhoneBook::add(void)
 {
+	int	curr;
+
 	this->_index++;
 	// start again from zero
 	// here i want to add new contact to the array or OverWrite it
-	std::cout << "Createing new Contact" << std::endl;
+	curr = this->_index % SIZE_OF_ARRAY;
 	std::string input;
 	std::cout << "Enter the First name : " << std::flush;
-	checkOnInput(input);
-	this->_arr[this->_index % SIZE_OF_ARRAY].setFirstName(input);
-	input.clear();
+	if (!checkOnInput(input))
+		return ;
+	this->_arr[curr].setFirstName(input);
 	std::cout << "Enter the Last name : " << std::flush;
-	checkOnInput(input);
-	this->_arr[this->_index % SIZE_OF_ARRAY].setLastName(input);
-	input.clear();
+	if (!checkOnInput(input))
+		return ;
+	this->_arr[curr].setLastName(input);
 	std::cout << "Enter the Nick name : " << std::flush;
-	checkOnInput(input);
-	this->_arr[this->_index % SIZE_OF_ARRAY].setNickName(input);
-	input.clear();
-	std::cout << "Enter the Darkest secret  : " << std::flush;
-	checkOnInput(input);
-	this->_arr[this->_index % SIZE_OF_ARRAY].setDarkestSecrete(input);
-	input.clear();
-	std::cout << "Enter the Phone Number  : " << std::flush;
-	validNumber(input);
-	this->_arr[this->_index % SIZE_OF_ARRAY].setPhoneNumber(input);
+	if (!checkOnInput(input))
+		return ;
+	this->_arr[curr].setNickName(input);
+	std::cout << "Enter the Darkest secret : " << std::flush;
+	if (!checkOnInput(input))
+		return ;
+	this->_arr[curr].setDarkestSecrete(input);
+	std::cout << "Enter the Phone Number : " << std::flush;
+	if (!validNumber(input))
+		return ;
+	this->_arr[curr].setPhoneNumber(input);
 }
 
 // phone fun
@@ -163,58 +146,46 @@ void PhoneBook::printContacts(void) const
 				<< "|" << std::setw(10) << "First Name"
 				<< "|" << std::setw(10) << "Last Name"
 				<< "|" << std::setw(10) << "Nick Name" << std::endl;
-	if (this->_index >= SIZE_OF_ARRAY)
-		counter = SIZE_OF_ARRAY - 1;
-	else
-		counter = this->_index;
+	counter = (this->_index >= SIZE_OF_ARRAY) ? (SIZE_OF_ARRAY - 1) : this->_index;
+
 	for (int i = 0; i <= counter; i++)
-	{
-		printRow(i, _arr[i].getFirstName(), _arr[i].getLastName(),
-			_arr[i].getNickName());
-	}
+		printRow(i, _arr[i].getFirstName(), _arr[i].getLastName(), _arr[i].getNickName());
 }
 
 void PhoneBook::search(void)
 {
-	int	index;
+	
+    if (this->_index == -1)
+        {
+            std::cerr << "Error : no contacts in this book. Please add a contact first." << std::endl;
+            return ;
+        }
+    this->printContacts();
+        
+    std::cout << "Select index: ";
+    std::string input;
+    if (!std::getline(std::cin, input))
+            return ;
 
-	std::string indexAsString;
-	if (this->_index == -1) // no Added contact
-	{
-		std::cerr << "Error : there is no contacts in this book please add contact first ." << std::endl;
-		return ;
-	}
-	this->printContacts();
-	std::cout << "Select index" << std::endl;
-	if (!std::getline(std::cin, indexAsString))
-	{
-		std::cerr << "Error : Error or EOF reading input." << std::endl;
-		return ;
-	}
-	if (indexAsString.empty())
-	{
-		std::cerr << "Error : empty input." << std::endl;
-		return ;
-	}
-	index = std::atoi(indexAsString.c_str());
-	// the range must be from 0 to SIZE_OF_ARRAY
-	if (index >= SIZE_OF_ARRAY || index < 0)
-	{
-		std::cerr << "Error : there is no contact with this index please try again." << std::endl;
-		return ;
-	}
-	int max_index = (this->_index >= SIZE_OF_ARRAY) ? SIZE_OF_ARRAY - 1 : this->_index;
-	if (index > max_index)
-	{
-		std::cerr << "Error : Cant find contact ." << std::endl;
-		return ;
-	}
-	std::cout << "\n";
-	std::cout << std::setw(15) << "--- Contact Information ---" << std::endl;
-	std::cout << std::setw(15) << "First Name: " << _arr[index].getFirstName() << std::endl;
-	std::cout << std::setw(15) << "Last Name: " << _arr[index].getLastName() << std::endl;
-	std::cout << std::setw(15) << "Nickname: " << _arr[index].getNickName() << std::endl;
-	std::cout << std::setw(15) << "Phone Number: " << _arr[index].getPhoneNumber() << std::endl;
-	std::cout << std::setw(15) << "Darkest Secret: " << _arr[index].getDarkestSecrete() << std::endl;
-}
+    if (input.empty() || input.length() > 1 || !std::isdigit(input[0]))
+        {
+            std::cerr << "Error : invalid index format." << std::endl;
+            return ;
+        }
+        
+    int index = input[0] - '0';
+    int max_index = (this->_index >= SIZE_OF_ARRAY) ? SIZE_OF_ARRAY - 1 : this->_index;  
+    if (index > max_index || index < 0)
+        {
+            std::cerr << "Error : Contact index out of range." << std::endl;
+            return ;
+        }
+        
+        std::cout << "\n" << std::setw(15) << "--- Contact Information ---" << std::endl;
+        std::cout << std::setw(15) << "First Name: " << _arr[index].getFirstName() << std::endl;
+        std::cout << std::setw(15) << "Last Name: " << _arr[index].getLastName() << std::endl;
+        std::cout << std::setw(15) << "Nickname: " << _arr[index].getNickName() << std::endl;
+        std::cout << std::setw(15) << "Phone Number: " << _arr[index].getPhoneNumber() << std::endl;
+        std::cout << std::setw(15) << "Darkest Secret: " << _arr[index].getDarkestSecrete() << std::endl;
+    }
 } // namespace Phone

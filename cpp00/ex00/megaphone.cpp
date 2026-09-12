@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 16:52:15 by moodeh            #+#    #+#             */
-/*   Updated: 2026/06/22 17:17:19 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/09/12 19:09:55 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,14 @@ int	main(int argc, char *argv[])
 	if (argc <= 1)
 	{
 		std ::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return (1);
+		return (0);
 	}
 	i = 1;
-	while (i < argc)
+	for (int i = 1; i < argc; i++)
 	{
 		std::string word = argv[i];
 		toUpper(word);
 		std::cout << word;
-		i++;
 	}
 	std ::cout << std::endl;
 	return (0);

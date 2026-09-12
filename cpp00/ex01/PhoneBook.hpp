@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 17:27:40 by moodeh            #+#    #+#             */
-/*   Updated: 2026/06/25 20:34:45 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/09/12 19:11:48 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ class PhoneBook
 	void printRow(const int &index, const std::string &firstName,
 		const std::string &lastName, const std::string &nickName) const;
 	std::string FormatColumn(const std::string str)const;
-	void checkOnInput(std::string &input);
-	void validNumber(std::string &input);
+	bool checkOnInput(std::string &input);
+	bool validNumber(std::string &input);
 };
 } // namespace Phone
 #endif
