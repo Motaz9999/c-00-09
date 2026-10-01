@@ -1,4 +1,4 @@
-NAME =  "Moar brainz!"
+NAME =  Moar brainz!
 SRC = main.cpp Zombie.cpp zombieHord.cpp
 OBJ	= $(SRC:.cpp=.o)
 CXX = c++

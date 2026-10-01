@@ -1,4 +1,4 @@
-NAME = "Unnecessary violence"
+NAME = Unnecessary_violence
 SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJ	= $(SRC:.cpp=.o)
 CXX = c++

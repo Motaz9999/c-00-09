@@ -1,4 +1,4 @@
- NAME = "Harl 2.0"
+NAME = Harl_2.0
 SRC = main.cpp Harl.cpp
 OBJ	= $(SRC:.cpp=.o)
 CXX = c++

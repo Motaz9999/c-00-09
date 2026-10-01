@@ -1,4 +1,4 @@
-NAME = "Sed is for losers"
+NAME = Sed_is_for_losers
 SRC = main.cpp
 OBJ	= $(SRC:.cpp=.o)
 CXX = c++

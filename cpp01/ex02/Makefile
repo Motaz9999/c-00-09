@@ -1,4 +1,4 @@
-NAME = "HI THIS IS BRAIN"
+NAME = HI THIS IS BRAIN
 SRC = main.cpp 
 OBJ	= $(SRC:.cpp=.o)
 CXX = c++
