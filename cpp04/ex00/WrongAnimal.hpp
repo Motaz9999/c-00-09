@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/01 18:51:47 by moodeh            #+#    #+#             */
-/*   Updated: 2026/10/01 20:21:19 by moodeh           ###   ########.fr       */
+/*   Created: 2026/09/30 19:10:03 by moodeh            #+#    #+#             */
+/*   Updated: 2026/10/01 20:28:13 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
-# include "Animal.hpp"
+# include <string>
 
-class Cat : public Animal
+class WrongAnimal
 {
-public:
-    Cat();
-    Cat(const std::string &type);
-    Cat(const Cat &other);
-    Cat &operator=(const Cat &other);
-    virtual ~Cat();
+  protected:
+	std::string _type;
 
-    virtual void makeSound(void) const;//must rewrite it if i want it to make another things here
+  public:
+	WrongAnimal();
+	WrongAnimal(const std::string &type);
+	WrongAnimal(const WrongAnimal &other);
+	WrongAnimal &operator=(const WrongAnimal &other);
+	virtual ~WrongAnimal();//just to test i make virtual
+
+	const std::string &getType() const;
+	void makeSound() const; // no virtual
 };
 
 #endif

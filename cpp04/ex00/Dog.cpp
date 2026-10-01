@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/01 18:51:49 by moodeh            #+#    #+#             */
+/*   Updated: 2026/10/01 18:51:50 by moodeh           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Dog.hpp"
 #include <iostream>
 
@@ -18,7 +30,7 @@ Dog::Dog(const Dog &other) : Animal(other)
 
 Dog &Dog::operator=(const Dog &other)
 {
-    std::cout << "[Fog] copy assignment operator ->" << _type << std::endl;
+    std::cout << "[Dog] copy assignment operator ->" << _type << std::endl;
 
     if (this != &other)
         Animal::operator=(other);

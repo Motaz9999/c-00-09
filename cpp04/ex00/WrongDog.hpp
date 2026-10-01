@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongDog.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/01 18:51:47 by moodeh            #+#    #+#             */
-/*   Updated: 2026/10/01 20:21:19 by moodeh           ###   ########.fr       */
+/*   Created: 2026/10/01 18:51:34 by moodeh            #+#    #+#             */
+/*   Updated: 2026/10/01 18:51:35 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGDOG_HPP
+# define WRONGDOG_HPP
 
-# include "Animal.hpp"
+# include "WrongAnimal.hpp"
 
-class Cat : public Animal
+class WrongDog : public WrongAnimal
 {
 public:
-    Cat();
-    Cat(const std::string &type);
-    Cat(const Cat &other);
-    Cat &operator=(const Cat &other);
-    virtual ~Cat();
+    WrongDog();
+    WrongDog(const std::string &type);
+    WrongDog(const WrongDog &other);
+    WrongDog &operator=(const WrongDog &other);
+    virtual ~WrongDog();
 
-    virtual void makeSound(void) const;//must rewrite it if i want it to make another things here
+     virtual void makeSound(void) const;//must rewite it if i want it to make another thinges here
 };
 
 #endif
