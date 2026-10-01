@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/01 18:52:04 by moodeh            #+#    #+#             */
-/*   Updated: 2026/10/01 18:52:05 by moodeh           ###   ########.fr       */
+/*   Created: 2026/09/30 19:10:03 by moodeh            #+#    #+#             */
+/*   Updated: 2026/10/01 20:28:13 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 # include <string>
 
-class Animal
+class WrongAnimal
 {
-protected:
-    std::string _type;
+  protected:
+	std::string _type;
 
-public:
-    Animal();
-    Animal(const std::string &type);
-    Animal(const Animal &other);
-    Animal &operator=(const Animal &other);
-    virtual ~Animal();
+  public:
+	WrongAnimal();
+	WrongAnimal(const std::string &type);
+	WrongAnimal(const WrongAnimal &other);
+	WrongAnimal &operator=(const WrongAnimal &other);
+	virtual ~WrongAnimal();//just to test i make virtual
 
-    const std::string &getType() const; //there is no need to make this function virtual since it does not need to be overridden in derived classes
-    virtual void makeSound() const;
+	const std::string &getType() const;
+	void makeSound() const; // no virtual
 };
 
 #endif

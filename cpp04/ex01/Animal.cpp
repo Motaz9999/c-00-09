@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/01 18:52:02 by moodeh            #+#    #+#             */
+/*   Updated: 2026/10/01 21:29:15 by moodeh           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Animal.hpp"
 #include <iostream>
 
@@ -28,8 +40,7 @@ Animal::~Animal()
 {
     std::cout << "[Animal] destructor -> " << _type << std::endl;
 }
-
-std::string Animal::getType() const
+const std::string &Animal::getType() const
 {
     return _type;
 }

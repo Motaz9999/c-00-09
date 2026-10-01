@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/01 18:52:19 by moodeh            #+#    #+#             */
+/*   Updated: 2026/10/01 18:52:20 by moodeh           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef DOG_HPP
 # define DOG_HPP
 
@@ -15,7 +27,12 @@ public:
     Dog &operator=(const Dog &other);
     virtual ~Dog();
 
-     virtual void makeSound(void) const;//must rewite it if i want it to make another thinges here
+    virtual void makeSound(void) const;//must rewrite it if i want it to make another things here
+
+    
+    const std::string &getIdea(int index) const;
+    void setIdea(int index, const std::string &idea);//then use  what inside brain
+    Brain *getBrain() const;
 };
 
 #endif
