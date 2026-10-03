@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/03 01:40:32 by moodeh            #+#    #+#             */
-/*   Updated: 2026/10/03 01:46:12 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/10/03 18:44:44 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ MateriaSource::MateriaSource()
     std::cout << "[MateriaSource] default constructor" << std::endl;
 
     for (int i = 0; i < 4; i++)
-        this->_templates[i] = NULL;
+        this->_templates[i] = NULL;//all on stack 
 }
 MateriaSource::MateriaSource(const MateriaSource &other)
 {
@@ -71,6 +71,7 @@ MateriaSource::~MateriaSource()
     }
 }
 
+//added to the array (inventory)
 void MateriaSource::learnMateria(AMateria *m)
 {
     if (!m)
@@ -80,7 +81,7 @@ void MateriaSource::learnMateria(AMateria *m)
     {
         if (this->_templates[i] == NULL)
         {
-            this->_templates[i] = m; // add it to array
+            this->_templates[i] = m;
             return;
         }
     }

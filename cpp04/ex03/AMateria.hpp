@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 17:00:33 by moodeh            #+#    #+#             */
-/*   Updated: 2026/10/02 18:34:15 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/10/03 18:00:09 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class AMateria
 	AMateria(const std::string &type);          // parm
 	AMateria(const AMateria &other);            // copy
 	AMateria &operator=(const AMateria &other); // assign
-	~AMateria();                                // destr
+	virtual ~AMateria();                                // destr
 
 	// setter and getters
 	void setType(const std::string &type);

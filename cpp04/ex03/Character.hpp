@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 21:26:24 by moodeh            #+#    #+#             */
-/*   Updated: 2026/10/03 00:05:00 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/10/03 17:59:46 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 typedef struct sFloorNode
 {
 	AMateria	*materia;
-	tFloorNode	*next;
+	struct sFloorNode	*next;
 }				tFloorNode;
 
 class Character : public ICharacter

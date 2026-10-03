@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 17:47:23 by moodeh            #+#    #+#             */
-/*   Updated: 2026/10/02 18:45:23 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/10/03 18:01:01 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,5 @@ const std::string &AMateria::getType() const
 
 void AMateria::use(ICharacter &target)
 {
-	std::cout << "AMateria: *doing nothing "<<_type << "*" << std::endl;
+	std::cout << "AMateria: *doing nothing "<<target.getName() << "*" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 22:03:41 by moodeh            #+#    #+#             */
-/*   Updated: 2026/10/03 01:13:26 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/10/03 18:40:15 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,34 +20,28 @@
 //    tFloorNode *_floorItems;
 void Character::addToFloor(tFloorNode **head, AMateria *mat)
 {
-	tFloorNode *ptr;
-	tFloorNode *newNode;
-
-	if (head == NULL)
+	if (!head || !mat)
+		return;
+	tFloorNode *newNode = new tFloorNode;
+	newNode->materia = mat;
+	if (*head == NULL)
 	{
-		*head = new tFloorNode;
-		(*head)->materia = mat;
-		(*head)->next = NULL;
+		*head = newNode;
 		return;
 	}
-	ptr = *head;
+	tFloorNode *ptr = *head;
 	while (ptr->next != NULL)
-	{
 		ptr = ptr->next;
-	}
-	newNode = new tFloorNode;
-	newNode->materia = mat;
-	newNode->next = NULL;
 	ptr->next = newNode;
-	newNode = NULL;
 	return;
 }
 
 void Character::deleteFloor(tFloorNode **head)
 {
 	tFloorNode *ptr;
-
-	while (head != NULL)
+	if (!head)
+		return;
+	while (*head != NULL)
 	{
 		ptr = *head;
 		*head = (*head)->next;
@@ -104,9 +98,10 @@ Character &Character::operator=(const Character &other)
 	std::cout << "[Character] copy assignment operator called for " << _name << std::endl;
 	if (this != &other)
 	{
+		this->_name = other._name;//must also copy the name
 		for (int i = 0; i < 4; i++)
 		{
-			delete _inventory[i];//btw its ok to be NULL
+			delete _inventory[i]; // btw its ok to be NULL
 			_inventory[i] = NULL;
 			if (other._inventory[i] != NULL)
 				this->_inventory[i] = other._inventory[i]->clone();
@@ -128,7 +123,7 @@ Character &Character::operator=(const Character &other)
 Character::~Character()
 {
 	std::cout << "[Character] destructor called for " << _name << std::endl;
-	deleteFloor(&_floorItems);
+	deleteFloor(&_floorItems); // first delete all prev materia if they exist
 	for (int i = 0; i < 4; i++)
 	{
 		delete _inventory[i];
@@ -143,18 +138,21 @@ const std::string &Character::getName() const
 }
 void Character::equip(AMateria *m)
 {
-	int i = 0;
-	while (_inventory[i] != NULL) // this to check if all slots are full
-	{
-		i++;
-	}
-	if (i == 4) // full
+	if (!m)
 		return;
-	_inventory[i] = m;
+	for (int i = 0; i < 4; i++)
+	{
+		if (_inventory[i] == NULL)
+		{
+			_inventory[i] = m;
+			return;
+		}
+	}
 }
 // fill the inventory from 0 to 3 until its full
 void Character::unequip(int idx)
 {
+
 	if (idx < 0 || idx > 3) // out range
 		return;
 	if (_inventory[idx] == NULL)
