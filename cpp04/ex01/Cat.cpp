@@ -24,12 +24,11 @@ Cat::Cat(const std::string &type) : Animal(type), _brain(new Brain())
 }
 
 // use the copy const from animal
-Cat::Cat(const Cat &other) : Animal(other)
+Cat::Cat(const Cat &other) : Animal(other), _brain(NULL)
 {
 	std::cout << "[Cat] copy constructor -> " << _type << std::endl;
-	// must deep copy
-	_brain = new Brain(*other._brain); // copy const first make memory then copy
-										// must deref cus the obj are ref (cant be pointer and ref same time)
+	if (other._brain)
+		_brain = new Brain(*other._brain);
 }
 
 Cat &Cat::operator=(const Cat &other)
@@ -38,7 +37,18 @@ Cat &Cat::operator=(const Cat &other)
 	if (this != &other)
 	{
 		Animal::operator=(other); // first
-		*_brain = *other._brain;
+		if (other._brain)
+		{
+			if (_brain)
+				*_brain = *other._brain;
+			else
+				_brain = new Brain(*other._brain);
+		}
+		else
+		{
+			delete _brain;
+			_brain = NULL;
+		}
 	}
 	return (*this);
 }
@@ -57,7 +67,7 @@ void Cat::makeSound() const
 
 const std::string &Cat::getIdea(int index) const
 {
-	static const std::string &empty="";
+	static const std::string empty = "";
 	if (_brain != NULL) // must check bc its pointer
 	{
 		return (_brain->getIdea(index));

@@ -19,8 +19,8 @@
 
 class AMateria
 {
-  private:
-	std::string _type; // cus we have get and set so its private
+  protected:
+	std::string _type;
   public:
 	AMateria();                                 // def
 	AMateria(const std::string &type);          // parm

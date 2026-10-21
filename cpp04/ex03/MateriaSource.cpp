@@ -79,6 +79,11 @@ void MateriaSource::learnMateria(AMateria *m)
 
     for (int i = 0; i < 4; i++)
     {
+        if (this->_templates[i] == m)
+            return;
+    }
+    for (int i = 0; i < 4; i++)
+    {
         if (this->_templates[i] == NULL)
         {
             this->_templates[i] = m;

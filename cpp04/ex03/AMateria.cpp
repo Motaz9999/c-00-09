@@ -28,10 +28,8 @@ AMateria::AMateria(const AMateria &other) // copy
 AMateria &AMateria::operator=(const AMateria &other) // assign
 {
 	std::cout << "[AMateria] copy assignment operator" << std::endl;
-	if (this != &other) // not the same
-	{
-		this->_type = other._type;
-	}
+	(void)other;
+	// subject: "While assigning a Materia to another, copying the type doesn't make sense."
 	return (*this);
 }
 AMateria::~AMateria() // destr

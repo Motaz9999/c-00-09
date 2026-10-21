@@ -30,7 +30,7 @@ WrongDog::WrongDog(const WrongDog &other) : WrongAnimal(other)
 
 WrongDog &WrongDog::operator=(const WrongDog &other)
 {
-    std::cout << "[Dog] copy assignment operator ->" << _type << std::endl;
+    std::cout << "[WrongDog] copy assignment operator ->" << _type << std::endl;
 
     if (this != &other)
         WrongAnimal::operator=(other);

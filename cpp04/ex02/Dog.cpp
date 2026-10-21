@@ -23,10 +23,11 @@ Dog::Dog(const std::string &type) : AAnimal(type), _brain(new Brain())
 	std::cout << "[Dog] parameterized constructor -> " << _type << std::endl;
 }
 
-Dog::Dog(const Dog &other) : AAnimal(other)
+Dog::Dog(const Dog &other) : AAnimal(other), _brain(NULL)
 {
 	std::cout << "[Dog] copy constructor -> " << _type << std::endl;
-	_brain = new Brain(*other._brain); // copy const first make memory then copy
+	if (other._brain)
+		_brain = new Brain(*other._brain);
 }
 
 Dog &Dog::operator=(const Dog &other)
@@ -35,7 +36,18 @@ Dog &Dog::operator=(const Dog &other)
 	if (this != &other)
 	{
 		AAnimal::operator=(other); // first
-		*_brain = *other._brain;
+		if (other._brain)
+		{
+			if (_brain)
+				*_brain = *other._brain;
+			else
+				_brain = new Brain(*other._brain);
+		}
+		else
+		{
+			delete _brain;
+			_brain = NULL;
+		}
 	}
 	return (*this);
 }
@@ -54,7 +66,7 @@ void Dog::makeSound() const
 
 const std::string &Dog::getIdea(int index) const
 {
-	static const std::string &empty="";
+	static const std::string empty = "";
 	if (_brain != NULL) // must check bc its pointer
 	{
 		return (_brain->getIdea(index));

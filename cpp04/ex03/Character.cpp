@@ -24,6 +24,7 @@ void Character::addToFloor(tFloorNode **head, AMateria *mat)
 		return;
 	tFloorNode *newNode = new tFloorNode;
 	newNode->materia = mat;
+	newNode->next = NULL;
 	if (*head == NULL)
 	{
 		*head = newNode;
@@ -140,6 +141,11 @@ void Character::equip(AMateria *m)
 {
 	if (!m)
 		return;
+	for (int i = 0; i < 4; i++)
+	{
+		if (_inventory[i] == m)
+			return;
+	}
 	for (int i = 0; i < 4; i++)
 	{
 		if (_inventory[i] == NULL)
