@@ -1,7 +1,7 @@
-NAME = test01
+NAME = test02
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = practice01.cpp
+SRC = practice02.cpp
 OBJ = $(SRC:.cpp=.o)
 .PHONY: all clean fclean re
 
