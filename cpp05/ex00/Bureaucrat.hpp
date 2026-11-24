@@ -1,3 +1,6 @@
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
+
 #include <iostream>
 #include <string>
 // #include <exception>
@@ -20,19 +23,22 @@ public:
     // exception classes nested classes
     class GradeTooHighException : public std::exception
     {
+    public:
         virtual const char *what() const throw();
     };
 
     class GradeTooLowException : public std::exception
     {
+    public:
         virtual const char *what() const throw();
     };
 
     // now getters and increment and decrement
-    const std::string getName() const;
-    int getGrade() const ;
+    const std::string &getName() const;
+    int getGrade() const;
 
     void incrementGrade();
     void decrementGrade();
 };
-std::ostream& operator<<(std::ostream &o ,const Bureaucrat &other);//printing
+std::ostream &operator<<(std::ostream &o, const Bureaucrat &other); // printing
+#endif

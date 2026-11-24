@@ -54,7 +54,7 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 }
 
 //     // now getters and increment and decrement
-const std::string Bureaucrat::getName() const
+const std::string &Bureaucrat::getName() const
 {
     return _name;
 }
@@ -81,6 +81,6 @@ void Bureaucrat::decrementGrade()
 // print in this form <name>, bureaucrat grade <grade>
 std::ostream &operator<<(std::ostream &o, const Bureaucrat &other)
 {
-    cout << other.getName() << ", bureaucrat grade " << other.getGrade();
+    o << other.getName() << ", bureaucrat grade " << other.getGrade()<<".";
     return o;
 } // printing

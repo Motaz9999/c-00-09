@@ -18,13 +18,6 @@ int main()
         cout << "Unexpected exception: " << e.what() << endl;
     }
 
-
-
-
-
-
-
-
     cout << "\n--- Attempting to create a Bureaucrat with grade 0 (too high) ---" << endl;
     try
     {
@@ -35,13 +28,6 @@ int main()
     {
         cout << "Caught: " << e.what() << endl;
     }
-
-
-
-
-
-
-
 
     cout << "\n--- Attempting to create a Bureaucrat with grade 151 (too low) ---" << endl;
     try
@@ -54,14 +40,20 @@ int main()
         cout << "Caught: " << e.what() << endl;
     }
 
-
-
-
-
-
-
-
-
+    cout << "\n--- test   decrementGrade() incrementGrade() ---" << endl;
+    try
+    {
+        Bureaucrat edge("ana", 100);
+        cout << edge << endl;
+        edge.decrementGrade();
+        cout << edge << "after dec" << endl;
+        edge.incrementGrade();
+        cout << edge << "after inc" << endl;
+    }
+    catch (const std::exception &e)
+    {
+        cout << "Caught: " << e.what() << endl;
+    }
 
     cout << "\n--- Pushing a valid Bureaucrat past the boundary via incrementGrade() ---" << endl;
     try
@@ -88,9 +80,6 @@ int main()
     {
         cout << "Caught: " << e.what() << endl;
     }
-
-
-
 
     cout << "\n--- End of program ---" << endl;
     return 0;
