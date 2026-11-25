@@ -114,7 +114,7 @@ void AForm::execute(Bureaucrat const &execute) const
     {
         throw AForm::GradeTooLowException();//this mean the person dont have the grade to execute
     }
-    this->executeAction(execute);//100% can be executed
+    this->executeAction();//100% can be executed
 }
 
 std::ostream &operator<<(std::ostream &o, const AForm &other)

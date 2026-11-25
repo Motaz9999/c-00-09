@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/25 03:15:08 by moodeh            #+#    #+#             */
-/*   Updated: 2026/11/25 03:15:41 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/11/25 04:19:06 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class PresidentialPardonForm : public AForm
 {
 private:
     std::string _target;                                         // like name
-    virtual void executeAction(Bureaucrat const &execute) const; // will be called by execute to do different things (depend on each class)
+    virtual void executeAction() const; // will be called by execute to do different things (depend on each class)
 public:
 //ocf
     PresidentialPardonForm();

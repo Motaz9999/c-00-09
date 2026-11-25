@@ -68,7 +68,7 @@ public:
     //so how the subclasses while execute the action (special signature)
     //easy just put here new pure fun for the son to implement
     protected:
-    virtual  void executeAction(Bureaucrat const & execute) const = 0 ;//will be called by execute to do different things (depend on each class)
+    virtual  void executeAction() const = 0 ;//will be called by execute to do different things (depend on each class)
 };
 std::ostream &operator<<(std::ostream &o, const AForm &other); // printing
 

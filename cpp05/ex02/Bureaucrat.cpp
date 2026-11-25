@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 06:50:18 by moodeh            #+#    #+#             */
-/*   Updated: 2026/11/25 01:59:22 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/11/25 04:17:21 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,16 +111,16 @@ void Bureaucrat::signForm(AForm &form)
 
 // <bureaucrat> executed <form>
 // If not, print an explicit error message.
-void Bureaucrat::executeForm(const AForm &form)
+void Bureaucrat::executeForm(const AForm &form) const
 {
     try
     {
         form.execute(*this);
-        cout << _name << "executed " << form.getName() << "." << endl;
+        cout << _name << " executed " << form.getName() << "." << endl;
     }
     catch (const std::exception &e)
     {
-        std::cout << _name << " couldn’t execute " << form.getName() << " because " << e.what() << "." << std::endl;
+        std::cout << _name << " couldn't execute " << form.getName() << " because " << e.what() << "." << std::endl;
     }
 }
 // print in this form <name>, bureaucrat grade <grade>

@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/25 03:06:27 by moodeh            #+#    #+#             */
-/*   Updated: 2026/11/25 03:07:44 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/11/25 04:19:04 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class RobotomyRequestForm : public AForm
 {
 private:
     std::string _target;                                         // like name
-    virtual void executeAction(Bureaucrat const &execute) const; // will be called by execute to do different things (depend on each class)
+    virtual void executeAction() const; // will be called by execute to do different things (depend on each class)
 public:
 //ocf
     RobotomyRequestForm();

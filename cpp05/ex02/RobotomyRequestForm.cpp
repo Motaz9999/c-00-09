@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/25 03:08:40 by moodeh            #+#    #+#             */
-/*   Updated: 2026/11/25 03:14:26 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/11/25 04:17:45 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 } // cus it inheritnat from Abs class
 //rand fun is print 0 - RAND_MAX	2147483647
 //so i just use odd or even with it 
-void RobotomyRequestForm::executeAction(Bureaucrat const &execute) const
+void RobotomyRequestForm::executeAction() const
 {
     std::cout << "* BZZZZZZ... DRRRRRRR... VRRRRRR! *" << std::endl;
     if (std::rand() % 2 == 0)

@@ -1,7 +1,7 @@
-NAME = Form
+NAME = AForm
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -MP
-SRC = main.cpp Bureaucrat.cpp Form.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 OBJ = $(SRC:.cpp=.o)
 DEPS = $(OBJ:.o=.d)
 #this for dependency files so when u update header just use make not make re to update the executable

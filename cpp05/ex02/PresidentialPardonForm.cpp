@@ -6,7 +6,7 @@
 /*   By: moodeh <moodeh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/25 03:16:02 by moodeh            #+#    #+#             */
-/*   Updated: 2026/11/25 03:18:00 by moodeh           ###   ########.fr       */
+/*   Updated: 2026/11/25 04:17:38 by moodeh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 } // cus it inheritnat from Abs class
 // rand fun is print 0 - RAND_MAX	2147483647
 // so i just use odd or even with it
-void PresidentialPardonForm::executeAction(Bureaucrat const &execute) const
+void PresidentialPardonForm::executeAction() const
 {
     std::cout << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }

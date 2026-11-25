@@ -60,7 +60,7 @@ public:
     
 // <bureaucrat> executed <form>
 // If not, print an explicit error message.
-    void executeForm(const AForm &form);
+    void executeForm(const AForm &form) const;
 
 };
 std::ostream &operator<<(std::ostream &o, const Bureaucrat &other); // printing
